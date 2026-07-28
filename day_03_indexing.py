@@ -1,9 +1,9 @@
-
 """
 
 Indexing
    - positive index 
    - negative index
+   - range => -t to t-1
    - hard = total - abs(easy)
    - f1, f5, f10, l1, l5, l10
    - middle index
@@ -62,6 +62,44 @@ f10 = t - 9 = -187
 
 #################################################
 
+"range"   
+
+total => 7
+range => -7 -6 -5 -4 -3 -2 -1  0  1  2  3  4  5  6
+
+total => 10
+range => -10, -9, -8, -7, -6 -5 -4 -3 -2 -1  0  1  2  3  4  5  6  7  8  9
+
+total => 100
+range => -100 to 99
+
+total => 1000
+range => -1000 to 999
+
+total => 39
+range => -39 to 38
+
+total => 27
+range => -27 to 26
+
+total => t
+range => -t to t-1
+
+IndexError: string index out of range
+IndexError: list index out of range
+IndexError: tuple index out of range
+
+#################################################
+
+Access
+>> x[i]
+
+Update
+>> x[i] = "mangoes"
+
+Delete
+>> del x[i]
+
+##################################################################################################
 
 """
-
