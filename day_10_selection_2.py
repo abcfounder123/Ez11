@@ -186,9 +186,10 @@ else: print("Grade.12")
 
 ##########################################################################
 
-7. Exercise  
+7. Exercise (10) marks
 
-Write by (if + elif + else).
+Code quality ကောင်းဖို့အတွက် (if + elif + else) ကို သုံးပြီး ပြန်ပြင်ရေးပါ။
+
 
 mark = 100
 
