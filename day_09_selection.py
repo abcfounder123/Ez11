@@ -227,6 +227,179 @@ else:
         print("f")
         print("new.4")
 
-################################################ 
+################################################################################################ 
+
+Step.4 ( idea => code )
+
+print("motor on.")
+
+------------------------------------------------- 
+
+1. low level
+
+if low_level:
+    print("motor on.")
+
+################################################
+
+2. electric, not electric
+
+
+if low_level:
+    if electric:
+        print("motor on.")
+    else:
+        print("generator on.")
+        print("motor on.")
+ 
+Any   => True
+None  => False
+
+################################################
+
+3. short_circuit, not short_circuit
+ 
+if short_circuit:
+    print("call mechanic.1")
+else:
+    print("motor on.")
+    
+-------------------------------------------------
+
+111
+low_level + electric + short_circuit  => print("call mechanic.1")
+
+101
+low_level + not electric + short_circuit  => print("call mechanic.2")
+
+
+110
+low_level + electric + not short_circuit  => print("motor on.")
+
+100
+low_level + not electric + not short_circuit  => print("motor on.")
+
+
+10   =>  print("generator on.")
+101  =>  print("generator off.")
+
+################################################
+
+4. m2
+
+print("motor.2 on.")
+
+-------------------------------------------------
+
+111
+low_level + electric + short_circuit  => print("motor.2 on.")
+
+101
+low_level + not electric + short_circuit => print("motor.2 on.")
+
+################################################
+
+5. short_circuit2, not short_circuit2
+
+
+if short_circuit2:
+    print("call mechanic for m2")
+else:
+    print("motor.2 on.")
+
+-------------------------------------------------
+
+1111   =>  print("call mechanic for m1")
+           print("call mechanic for m2")
+
+1011   =>  print("generator on.")
+           print("call mechanic for m1")
+           print("call mechanic for m2")
+           print("generator off.")
+ 
+1110   =>  print("call mechanic for m1")
+           print("motor.2 on.")
+           
+1010   =>  print("generator on.")
+           print("call mechanic for m1")
+           print("motor.2 on.")
+                 
+################################################
+
+6. m3
+
+print("motor.3 on.")
+
+1111
+1011
+
+################################################
+
+7. short_circuit3, not short_circuit3
+
+
+if short_circuit3:
+    print("call mechanic for m3")
+else:
+    print("motor.3 on.")
+
+
+11111
+call mechanic for m1
+call mechanic for m2
+call mechanic for m3
+
+10111
+generator on.
+call mechanic for m1
+call mechanic for m2
+call mechanic for m3
+generator off.
+
+11110
+call mechanic for m1
+call mechanic for m2
+motor.3 on.
+
+10110
+generator on.
+call mechanic for m1
+call mechanic for m2
+motor.3 on.
+
+################################################
+
+8. m4
+print("motor.4 on.")
+
+################################################
+
+9. short_circuit4, not short_circuit4
+
+if short_circuit4:
+    print("call mechanic for m4")
+else:
+    print("motor.4 on.")
+    
+################################################
+
+10. m5
+
+print("motor.5 on.")
+
+################################################
+
+9. short_circuit5, not short_circuit5
+
+if short_circuit5:
+    print("call mechanic for m5")
+else:
+    print("motor.5 on.")
+    
+################################################
+
+Exercise 15 marks  (m4, m5)
+
+################################################################################################
 
 """
