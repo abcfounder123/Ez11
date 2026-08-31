@@ -73,25 +73,6 @@ m(l=4)
 
 Step.3
 
-def m12(l):
-    for r in range(1, 13, 1):
-        print(f"{l} x {r} = {l * r}")
-    print('-' * 42)
-
-
-def m10(l):
-    for r in range(1, 11, 1):
-        print(f"{l} x {r} = {l * r}")
-    print('-' * 42)
-
-
-m12(2)
-m10(2)
-
-##########################################
-
-Step.4
-
 
 def m(l, n):
     for r in range(1, n+1, 1):
