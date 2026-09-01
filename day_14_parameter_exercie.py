@@ -1,9 +1,32 @@
 
 """
 
+1. simple data နှစ်ခု လက်ခံချင်တဲ့အခါ
+2. complex data 4ခု လက်ခံချင်တဲ့အခါ
+3. ကြုံသလိုထည့်မယ့် data နှစ်ခုနဲ့ complex data 2ခု လက်ခံချင်တဲ့အခါ
+4. simple data 3ခုနဲ့ complex data 2ခု လက်ခံချင်တဲ့အခါ
+5. simple data 3ခု ၊ complex data 2ခုနဲ့ ကြုံသလိုထည့်တာ 2ခု လက်ခံချင်တဲ့အခါ
+6. simple data 3ခု ၊ complex data 3ခုနဲ့ 
+country တန်ဖိုးမထည့်ခဲ့ရင် Myanmar ဖြစ်စေချင်သောအခါ
+7. simple data တွေကို အကန့်အသတ်မရှိ လက်ခံချင်သောအခါ
+8. complex data တွေကို အကန့်အသတ်မရှိ လက်ခံချင်သောအခါ
+9. simple data 3 ခုနဲ့ complex data တွေကို အကန့်အသတ်မရှိ လက်ခံချင်သောအခါ
+10. complex data 2 ခုနဲ့ simple data တွေကို အကန့်အသတ်မရှိ လက်ခံချင်သောအခါ
+11. unlimited simple data, minium = 3
+12. unlimited complex data, minium = 2
+13. 11 + 12
+14. အကန့်အသတ်မရှိတဲ့ function, ဘာစည်းမျဉ်းမှ လိုက်နာစရာမလိုတဲ့ function ဖန်တီးချင်သောအခါ
+15. print function ၏ စည်းမျဉ်းများ
+16. input function ၏ စည်းမျဉ်းများ
+
+##########################################
+
 Combination of Parameters (16)
 
 1. Simple is better than complex. (N0.3)
+
+simple data နှစ်ခု လက်ခံချင်တဲ့အခါ
+
 
 
 def add(n1, n2, /):
@@ -15,6 +38,8 @@ add(1, 2)
 ##########################################
 
 2. Complex is better than complicated. (No.4)
+
+complex data 4ခု လက်ခံချင်တဲ့အခါ
 
 
 def info(*, name, age, grade, roll):
@@ -28,7 +53,9 @@ info(name="abc", age=10, grade="A", roll=1)
 
 3. No.1 + No.4
 
-x, y       --->   F1, F2, F3
+ကြုံသလိုထည့်မယ့် data နှစ်ခုနဲ့ complex data 2ခု လက်ခံချင်တဲ့အခါ
+
+x, y         --->   F1, F2, F3
 name, age    --->   F2
 
 
@@ -44,6 +71,9 @@ f(1, y=2, name="Mg Mg", age=10)
 
 4. N0.3 + No.4
 
+simple data 3ခုနဲ့ complex data 2ခု လက်ခံချင်တဲ့အခါ
+
+
 a, b, c     --->   F1
 
 name, age   --->   F2
@@ -58,6 +88,8 @@ f(1, 2, 3, name="Mg Mg", age=10)
 ##########################################
 
 5. N0.3 + N0.1 + No.4
+
+simple data 3ခု ၊ complex data 2ခုနဲ့ ကြုံသလိုထည့်တာ 2ခု လက်ခံချင်တဲ့အခါ
 
 a, b, c     --->   F1
 x, y        --->   F1, F2, F3
@@ -89,6 +121,10 @@ name, age    ->   F2
 
 6. No.3 + No.4 + No.2
 
+simple data 3ခု ၊ complex data 3ခုနဲ့ 
+country တန်ဖိုးမထည့်ခဲ့ရင် Myanmar ဖြစ်စေချင်သောအခါ
+
+
 a, b, c     --->   F1                    No.3
 name, age   --->   F2                    No.4
 country     --->   F2 ("Myanmar")        No.4 + No.2
@@ -105,6 +141,7 @@ f(1, 2, 3, name="Mg Mg", age=10, country="England")
 
 7. No.5
 
+simple data တွေကို အကန့်အသတ်မရှိ လက်ခံချင်သောအခါ
 variable length + simple data
 
 
@@ -123,6 +160,7 @@ add()
 
 8. No.6
 
+complex data တွေကို အကန့်အသတ်မရှိ လက်ခံချင်သောအခါ
 variable length + complex data
 
 
@@ -136,6 +174,9 @@ info(name="abc", age=10, weight=20)
 ##########################################
 
 9. No.3 + No.6
+
+simple data 3 ခုနဲ့
+complex data တွေကို အကန့်အသတ်မရှိ လက်ခံချင်သောအခါ
 
 3 simple data              No.3
 unlimited complex data     No.6
@@ -151,6 +192,9 @@ f(1, 2, 3, name="Mg Mg", age=10)
 ##########################################
 
 10. No.4 + No.5   =>   No.5 + No.4
+
+complex data 2 ခုနဲ့
+simple data တွေကို အကန့်အသတ်မရှိ လက်ခံချင်သောအခါ
 
 2 complex data             No.4
 unlimited simple data      No.5
@@ -222,7 +266,9 @@ f(1, 2, 3, 4, 5, 6, user_name="Mg Mg", password="12345", gender="Male", age=10)
 
 ##########################################
 
-14. Unlimited function (No.5 + No.6)    
+14. Unlimited function (No.5 + No.6) 
+
+အကန့်အသတ်မရှိတဲ့ function, ဘာစည်းမျဉ်းမှ လိုက်နာစရာမလိုတဲ့ function ဖန်တီးချင်သောအခါ  
 
 unlimited simple data
 unlimited complex data
