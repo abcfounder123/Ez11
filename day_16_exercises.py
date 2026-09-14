@@ -167,7 +167,6 @@ for n in data:
     else:
         odd.append(n)
 
-
 print(even)
 print(odd)
 
