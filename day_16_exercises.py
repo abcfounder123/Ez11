@@ -575,4 +575,138 @@ def linear_search(l, element):
 
 ------------------------------------------
 
+22. Binary search
+
+
+[31, 42, 68, 80, 100, 150, 200]
+
+element = 300
+
+1. m = 80
+2. greater => Right => [100, 150, 200]
+
+1. m = 150
+2. greater => Right => [200]
+
+1. m = 200
+2. greater => Right => []
+
+------------------------------------------ 
+
+[31, 42, 68, 80, 100, 150, 200]
+
+
+greater => right  => [m+1:]
+less    => left   => [:m]
+
+found   =>  stop True
+empty   =>  stop False
+
+------------------------------------------
+
+
+def binary_search(l, element):
+    n = 0
+    while len(l) > 0:
+        m = len(l) // 2
+        middle_value = l[m]
+        
+        if element == middle_value:
+            return True
+        elif element > middle_value:
+            l = l[m+1:]
+        elif element < middle_value:
+            l = l[:m]
+
+    return False
+    
+    
+------------------------------------------
+
+23. count_vowels(s) (စာလုံးထဲက a, e, i, o, u ရေတွက်ခြင်း။)
+
+
+def count_vowels(s):
+    t = 0
+    for c in s:
+        if c in "aeiouAEIOU":
+            t += 1
+    return t
+
+------------------------------------------
+
+24. count_vowels(s) (စာလုံးထဲက a, e, i, o, u ဘယ်နှစ်လုံးရှိလဲရေတွက်ခြင်း။)
+
+Add item to dict
+d["I"] = 1
+
+Access dict value
+d["I"]
+
+Update dict value
+d["I"] = 2
+d["I"] += 1
+
+
+def count_vowels(s):
+    d = {}
+    for c in x:
+        if c in "aeiouAEIOU":
+            if c not in d.keys():
+                d[c] = 1
+            else:
+                d[c] += 1
+    return d
+
+
+x = "I go to school."
+
+print(count_vowels(x))
+
+------------------------------------------
+
+25. leap year (ရက်ထပ်နှစ်) (Julian calendar)
+ >> divisible by 4  (y % 4 == 0)
+ 
+ 
+def is_leap_year(year):
+    return year % 4 == 0
+    
+
+------------------------------------------
+
+26. leap year (ရက်ထပ်နှစ်) (Gregorian calendar)
+>> divisible by 400 ( eg. 2000, 1600 )       ( y % 400 == 0 )
+>> divisible by 4 and not divisible by 100   ( y % 4 == 0 and y % 100 != 0 )
+>> Rule.1 or Rule.2
+
+
+def is_leap_year(year):
+    r1 = year % 400 == 0
+    r2 = year % 4 == 0 and year % 100 != 0
+    return r1 or r2
+    
+    
+------------------------------------------
+
+27. leap year (ရက်ထပ်နှစ်) Modern calendar
+>> divisible by 400 and not divisible by 3200  ( y % 400 == 0 and y % 3200 != 0 )
+>> divisible by 4 and not divisible by 100     ( y % 4 == 0 and y % 100 != 0 )
+
+
+def is_leap_year(year):
+    r1 = year % 400 == 0 and y % 3200 != 0
+    r2 = year % 4 == 0 and year % 100 != 0
+    return r1 or r2
+    
+
+------------------------------------------
+
+Summary
+=> +1 days by 4 years                     <---  Julian
+=> -3 days by 400 years                   <---  Gregorian
+=> -1 days by 3200 years                  <---  Modern
+
+------------------------------------------------------------------------------------
+
 """
