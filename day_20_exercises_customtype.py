@@ -142,4 +142,61 @@ def __eq__(self, other):
             
 #################################################
 
+Step.10 (literal)
+
+သင်္ကေတနဲ့ object ဖန်တီးချင်တာပါ။
+
+Install external pakage
+1. custom-literals
+2. forbiddenfruit
+
+from custom_literals import literal
+
+@literal(int, float, name="dollar")
+def f1(n):
+    return Dollar(n)
+
+#################################################
+
+Step.11
+
+Memory သက်သာအောင် တန်ဖိုးတူခဲ့ရင် တစ်ကြိမ်ပဲ ဖန်တီးပြီး ဝေမျှသုံးစေချင်တာပါ။
+
+တန်ဖိုးတူခဲ့ရင် တစ်ကြိမ်ပဲ ဖန်တီး  =>  new()
+
+
+class Dollar:
+    x = {}
+
+    def __new__(cls, n):
+        if n not in Dollar.x.keys():
+            self = super().__new__(cls)
+            self.n = n
+            Dollar.x[n] = self
+
+        return Dollar.x[n]
+
+
+##################################################################################################
+
+"Test for exercises"
+
+print(1 .dollar + 5000 .kyat)
+print(1 .dollar - 5000 .kyat)
+print(1 .dollar == 5000 .kyat)
+
+print(id(1 .dollar))
+print(id(1 .dollar))
+print(id(1 .dollar))
+
+print(5000 .kyat + 1 .dollar)
+print(5000 .kyat - 1 .dollar)
+print(5000 .kyat == 1 .dollar)
+
+print(id(5000 .kyat))
+print(id(5000 .kyat))
+print(id(5000 .kyat))
+
+##################################################################################################
+
 """
