@@ -92,7 +92,7 @@ Exercises
 
 ------------------------------------------------------
 
-Arithmetic operator(9) (e u */ +-)
+Arithmetic operators(9) (e u */ +-)
 
 1. Exponent            **
 2. Unary minus         -
@@ -295,7 +295,7 @@ Membership operators (2)
 
 ------------------------------------------------------
 
-Logical operator (3)
+Logical operators (3)
 
 1. not 
 2. and
