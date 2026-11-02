@@ -687,7 +687,110 @@ fourth order function                    -->  3rd function
 
 ##################################################################################
 
-6. Closure
+6. Currying
+
+- Haskell Curry
+- f(x, y) => f(x)(y)
+- multiply(x, y, z) => multiply(x)(y)(z)
+- nested function
+
+1. Reusability
+2. Function composition
+3. Delayed Execution
+
+##################################################################################
+
+Currying methods example.1
+- multiply(x, y, z) => multiply(x)(y)(z)
+
+def multiply(x, y, z):
+    return x * y * z
+
+
+def multiply(x):
+    def f2(y):
+        def f3(z):
+            return x * y * z
+        return f3
+    return f2
+
+#########################################
+
+def multiply(x):
+    def f2(y):
+        def f3(z):
+            return x * y * z
+        return f3
+    return f2
+
+
+b = multiply(1) # x=1 => f2
+print(b)
+
+c = b(2) # x=1, y=2 => f3
+print(c)
+
+ans = c(3) # x=1, y=2, z=3 => x * y * z => 6
+print(ans)
+
+ans = multiply(1)(2)(3)
+print(ans)
+
+#########################################
+
+Currying methods example.2
+- tax_calculator(tax_rate, price)  =>  tax_calculator(tax_rate)(price)
+
+tax_rate = 5%, 10%, 15%
+price = ?
+
+food_tax = 5%
+electronic_tax = 10%
+house_tax = 15%
+price = ?
+
+#########################################
+
+1. Reusability
+   - tax_calculator() => food_tax_calculator(), electronic_tax_calculator()
+
+
+def tax_calculator(tax_rate):
+    def f2(price):
+        return price + (price * tax_rate)
+    return f2
+
+
+food_tax_calculator = tax_calculator(0.05)
+electronic_tax_calculator = tax_calculator(0.1)
+house_tax_calculator = tax_calculator(0.15)
+
+print(tax_calculator(0.05)(100))
+print(food_tax_calculator(100))
+print(electronic_tax_calculator(1200))
+print(house_tax_calculator(1_000_000))
+
+#########################################
+
+3. Delayed Execution
+
+student =>  roll, name, result(pass, fail)
+
+
+def student(roll, name):
+    print("roll = ", roll)
+    print("name = ", name)
+    def f2(result):
+        print(f"roll {roll} (exam = {result})")
+    return f2
+
+
+s1 = student(1, "Mg Mg")  # Execution with first data
+# s1("pass") # Execution with second data
+
+##################################################################################
+
+7. Closure
 
 Closing something လို့ အဓိပ္ပါယ်ရပါတယ်။
 
