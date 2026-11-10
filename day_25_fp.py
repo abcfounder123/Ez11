@@ -2010,5 +2010,39 @@ lru = least recently used
 
 ##################################################################################
 
+13. Partial
+
+power function    =>   base, exponent  => 2 ** 2, 3 ** 2, 4 ** 2, 5 ** 2 | 2 ** 3, 3 ** 3, 4 ** 3, 5 ** 3
+square function   =>   base ** 2
+cube   function   =>   base ** 3
+
+#########################################
+
+fun => argument 1, argument 2, argument 3, argument 4, argument 5, argument 6
+
+#########################################
+
+power(base, exponent)
+square(5) => power(base=5, exponent=2)  => 5 ** 2  => 25
+cube(5) => power(base=5, exponent=3)    => 5 ** 3  => 125
+
+#########################################
+
+from functools import partial
+
+
+def power(base, exponent):
+    return base ** exponent
+
+
+square = partial(power, exponent=2)  # power(base, exponent=2)
+cube = partial(power, exponent=3)  # power(base, exponent=3)
+
+print(power(5, 3))
+print(square(5))
+print(cube(5))
+
+##################################################################################
+
 
 """
