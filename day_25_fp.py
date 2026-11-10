@@ -2044,5 +2044,91 @@ print(cube(5))
 
 ##################################################################################
 
+14. Lazy Evaluation
+
+- memory efficiency
+- performance
+- infinite series
+
+generator = 50 bytes
+next value = 28 bytes  (int)
+total = 50 + 28
+
+#########################################
+
+
+def f():
+    for n in range(1, 1_000_001):
+        yield n
+
+
+numbers1 = f()
+print(next(numbers1))   # 1 sec
+
+numbers = (n for n in range(1, 1_000_001))
+print(numbers)
+print(next(numbers))    # 1 sec
+
+#########################################
+
+15. Eager Evaluation
+
+- creating all data in RAM
+- ready to use all data
+
+list = 50 bytes
+int = 28 bytes
+total = 50 + 28 million
+
+#########################################
+
+numbers = [n for n in range(1, 1_000_001)]  # 1_000_000 (int objects)
+
+print(numbers[0]) # 1_000_000 sec
+print(numbers)
+
+##################################################################################
+
+16. list comprehension to generator comprehension
+    => [] to ()
+    => (n for n in range(1, 1_000_001)) will create following generator object
+
+#########################################
+
+
+def generator_object():
+    for n in range(1, 1_000_001):
+        yield n
+        
+
+numbers = generator_object()
+print(numbers)
+print(next(numbers))
+
+numbers = (n for n in range(1, 1_000_001))  # same as above generator, generator comprehension
+print(numbers)
+print(next(numbers))
+
+##################################################################################
+
+17. Lazy Evaluation Vs Eager Evaluation
+
+RAM 8 GB -> can not create one billion objects by Eager Evaluation   + SSD 20 GB
+
+numbers = [n for n in range(1, 1_000_000_001)]    # 28 GB
+
+for n in numbers:
+    print(n)
+
+#########################################
+
+Generator can create a series of one billion objects by Lazy Evaluation.
+
+numbers = (n for n in range(1, 1_000_000_001))     # 50 + 28 bytes
+
+for n in numbers:
+    print(n)
+
+##################################################################################################
 
 """
